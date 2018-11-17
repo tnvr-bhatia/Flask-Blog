@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content%}
+    <div class="container-fluid">
+      <div class = 'row'>
+          <div class="col">
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <ul>
+                    {% for message in messages %}
+                    <li>{{ message }}</li>
+                    {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endwith %}
+        </div>
+      </div>  
+
+      <div class = 'row mt-4'>
+            <div class="col">
+                <h4>Hi, {{user.username}}</h4>
+                {% for post in posts %}
+                  <div>  
+                    <span class="font-weight-bold">{{post.author.username}}</span>
+                    <span class="font-weight-light"> says: {{post.body}}</span>
+                  </div>
+                {% endfor %}
+            </div>
+      </div>
+    </div>
+{% endblock %}

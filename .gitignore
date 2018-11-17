@@ -1,7 +1,4 @@
 mbvenv
-application/__pycache__/routes.cpython-37.pyc
+application/__pycache__/
 activate
-__pycache__/config.cpython-37.pyc
-__pycache__/microblog.cpython-37.pyc
-application/__pycache__/__init__.cpython-37.pyc
-application/__pycache__/forms.cpython-37.pyc
+__pycache__
