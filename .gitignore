@@ -2,3 +2,4 @@ mbvenv
 application/__pycache__/
 activate
 __pycache__
+.env

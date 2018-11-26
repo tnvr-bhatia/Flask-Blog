@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <style>
+        .error{
+            color:darkred;
+        }
+    </style>
+    <div class="container-fluid">
+            <div class="row">
+                <div class="col-md mt-4 d-flex justify-content-center">
+                     <div class="row">
+                        <div class="col-md">       
+                            <h1>Sign In</h1>
+                            <form  action = "" method="POST" novalidate>
+                                {{form.hidden_tag()}}
+                                <p>
+                                    {{form.username.label }}<br>
+                                    {{form.username(size = 32,class_ = "form-control border-bottom border-left-0 border-right-0 border-top-0 rounded-0 px-1 border-primary")}}
+                                    {% for error in form.username.errors%}
+                                    <span class="error">{{error}}</span>
+                                    {% endfor %}
+                                </p> 
+                                <p>
+                                    {{form.password.label }}<br>
+                                    {{form.password(size = 32,class_ = "form-control border-bottom border-left-0 border-right-0 border-top-0 rounded-0 px-1 border-primary")}}
+                                    {% for error in form.password.errors%}
+                                    <span class="error">{{error}}</span>
+                                    {% endfor %}
+                                </p> 
+                                <p>
+                                    {{form.remember_me}} {{form.remember_me.label}}
+                                </p>
+                                <p>
+                                    {{ form.submit(class_ = "btn btn-primary btn-sm rounded-0") }}
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+{% endblock%}
